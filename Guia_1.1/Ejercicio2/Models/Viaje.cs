@@ -17,15 +17,17 @@ namespace Ejercicio2.Models
 
         public int CantParadas { get; private set; }
 
-        public int HDuracionViaje { get; private set; } // supongo que por el uml debo usar estas variables como hora de inicio en el sonctructor
+        public int HDuracionViaje { get; private set; } 
 
         public int MDuracionViaje { get; private set; }
 
+        public int HInicio { get; private set; }
+        public int MInicio { get; private set; }
+        DateTime horaSalida;
 
-        public Viaje(int hInicio, int mInicio , int asientos)
+        public Viaje(int asientos)
         {
-            this.HDuracionViaje = hInicio;
-            this.MDuracionViaje = mInicio;
+           horaSalida = DateTime.Now;
 
             this.Asientos = asientos;
 
@@ -34,8 +36,10 @@ namespace Ejercicio2.Models
         public void RealizarParada(int hLlegadaParada,int mLlegadaParada, int hSalidaParada, int mSalidaParada, int asciende, int descienden)
         {
 
+            CantParadas++;
+
         }
-        public void FinalizarViaje(int hFinal, int mFinal)
+        public void FinalizarViaje()
         {
 
         }
